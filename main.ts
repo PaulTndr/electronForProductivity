@@ -1,4 +1,4 @@
-import { app, BrowserWindow, screen } from 'electron';
+import { app, BrowserWindow, screen, ipcMain } from 'electron';
 import * as path from 'path';
 import * as url from 'url';
 
@@ -15,14 +15,15 @@ function createWindow(): BrowserWindow {
   win = new BrowserWindow({
     x: 0,
     y: 0,
-    width: size.width,
-    height: size.height,
+    width: size.width*0.8,
+    height: size.height*0.8,
+    frame:false,
     webPreferences: {
       nodeIntegration: true,
       allowRunningInsecureContent: (serve) ? true : false,
     },
   });
-
+  win.center();
   if (serve) {
     require('electron-reload')(__dirname, {
       electron: require(`${__dirname}/node_modules/electron`)
@@ -79,3 +80,14 @@ try {
   // Catch Error
   // throw e;
 }
+
+ipcMain.on('resize', function (e, sizeFenetre : string) {
+  const electronScreen = screen;
+  const size = electronScreen.getPrimaryDisplay().workAreaSize;
+  if(sizeFenetre==='medium'){
+    win.setSize(size.width*0.8, size.height*0.8);
+  } else if(sizeFenetre==='full'){
+    win.setSize(size.width, size.height);
+  }
+  win.center();
+});

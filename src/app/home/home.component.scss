@@ -1,16 +1,44 @@
-.container {
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+#view{
+  width:100vw;
+  height:100vh;
+  background-color:#2E2E31;
+  overflow:hidden;
+}
 
-  background: url(../../assets/background.jpg) no-repeat center fixed;
-  -webkit-background-size: cover; /* pour anciens Chrome et Safari */
-  background-size: cover; /* version standardisée */
+.resizingIcons{
+  position:absolute;
+  width:4vw;
+  justify-content: space-between;
+  top:10px;
+  right:10px;
+  img{
+    width:1.5vw;
+    filter:invert(1);
+    &:hover{
+      filter: invert(1) drop-shadow(0px 0px 2px #FF911B);
+    }
+  }
+}
 
-  .title {
-    color: white;
-    margin: 0;
-    padding: 50px 20px;
+.mainScreen{
+  background-color: #FCFEFB;
+  width: 96%;
+  margin: auto;
+  height: 83%;
+  padding: 2%;
+}
+
+.footer{
+  justify-content: space-between;
+  height: 4vh;
+  padding: 0px 1.5vw;
+  img{
+    height: 3vh;
+    display: block;
+  }
+  p{
+    color:#FCFEFB;
+    margin:0px;
+    font-size: 2vh;
   }
 }

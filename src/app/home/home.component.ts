@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ElectronService } from 'ngx-electron';
 
 @Component({
   selector: 'app-home',
@@ -7,8 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  isStatistics:Boolean=true
+
+  constructor(private electronService: ElectronService) { }
 
   ngOnInit(): void { }
+
+  resize(e :Event, size : string){
+    e.preventDefault();
+    this.electronService.ipcRenderer.send('resize', size);
+  }
 
 }

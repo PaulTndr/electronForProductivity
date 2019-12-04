@@ -5,3 +5,22 @@ html, body {
 
   height: 100%;
 }
+
+.flexRow{
+  display: flex;
+  flex-direction: row;
+}
+
+.flexCol{
+  display:flex;
+  flex-direction: column;
+}
+
+.button{
+  cursor:pointer;
+  -webkit-app-region: no-drag;
+}
+
+.notDraggable{
+  -webkit-app-region: no-drag;
+}

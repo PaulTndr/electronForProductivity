@@ -1,5 +1,22 @@
-<div class="container">
-  <h1 class="title">
-    {{ 'PAGES.HOME.TITLE' | translate }}
-  </h1>
+<div id="view">
+  <div class="flexRow resizingIcons">
+    <img class="button" (click)="resize($event, 'medium')" src="https://image.flaticon.com/icons/svg/130/130911.svg">
+    <img class="button" (click)="resize($event, 'full')" src="https://image.flaticon.com/icons/svg/130/130910.svg">
+  </div>
+  <menu style="padding: 10px;margin: 0px;"></menu>
+
+  <div class="mainScreen">
+    <statistics *ngIf="isStatistics"></statistics>
+  </div>
+
+  <div class="footer flexRow">
+    <div class="flexRow" style="align-items: center;height: 4vh;">
+      <p>©Paul Tondereau</p>
+    </div>
+    <div class="flexRow" style="align-items: center;height: 4vh;">
+      <p>Powered by</p>
+      <img src="https://scr.sad.supinfo.com/articles/resources/226962/6972/0.png"/>
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Angular_full_color_logo.svg/1200px-Angular_full_color_logo.svg.png"/>
+    </div>
+  </div>
 </div>

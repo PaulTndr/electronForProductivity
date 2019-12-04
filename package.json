@@ -88,5 +88,9 @@
   },
   "engines": {
     "node": ">=10.9.0"
+  },
+  "dependencies": {
+    "@types/electron": "1.6.10",
+    "ngx-electron": "2.2.0"
   }
 }
