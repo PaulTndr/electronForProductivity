@@ -1,1 +1,27 @@
-<router-outlet></router-outlet>
+<div id="view">
+  <div class="header flexRow">
+    <div class="flexRow">
+      <img class="logo" src="https://assets.stickpng.com/images/5eb3c912c8c4590004435151.png" style="filter:invert(1);"/>
+      <menu-nav></menu-nav>
+    </div>
+    <div class="flexRow resizingIcons">
+      <img class="button" (click)="resize($event, 'medium')" src="https://image.flaticon.com/icons/svg/130/130911.svg">
+      <img class="button" (click)="resize($event, 'full')" src="https://image.flaticon.com/icons/svg/130/130910.svg">
+    </div>
+  </div>
+    
+  
+    <div class="mainScreen">
+      <router-outlet></router-outlet>
+    </div>
+  
+    <div class="footer flexRow">
+      <p>©Paul Tondereau</p>
+      <div class="flexRow">
+        <p>Powered by</p>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Electron_Software_Framework_Logo.svg/1200px-Electron_Software_Framework_Logo.svg.png"/>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Angular_full_color_logo.svg/1200px-Angular_full_color_logo.svg.png"/>
+      </div>
+    </div>
+  </div>
+  

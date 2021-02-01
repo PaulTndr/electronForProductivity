@@ -1,0 +1,59 @@
+#view {
+  width: 100vw;
+  height: 100vh;
+  background-color: rgb(22, 22, 22);
+  overflow: hidden;
+}
+
+.header {
+  position: relative;
+  height: 5vh;
+  justify-content: space-between;
+
+  .logo {
+    height: 4vh;
+    width: 4vh;
+    margin: auto;
+    margin-left: 1vw;
+  }
+
+  .resizingIcons {
+    justify-content: space-between;
+
+    img {
+      width: 1.5vw;
+      filter: invert(1);
+      margin-right: 10px;
+
+      &:hover {
+        filter: invert(1) drop-shadow(0px 0px 2px #FF911B);
+      }
+    }
+  }
+}
+
+.mainScreen {
+  background-color: #222222;
+  color: white;
+  margin: auto;
+  height: 90vh;
+  padding: 1vh 2vw;
+}
+
+.footer {
+  justify-content: space-between;
+  height: 3vh;
+  align-items: center;
+  padding: 0px 1.5vw;
+
+  img {
+    height: 2vh;
+    display: block;
+  }
+
+  p {
+    color: #FCFEFB;
+    margin: 0px;
+    font-size: 1.5vh;
+  }
+}

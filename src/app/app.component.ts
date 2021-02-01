@@ -25,4 +25,9 @@ export class AppComponent {
       console.log('Mode web');
     }
   }
+
+  resize(e: Event, size: string) {
+    e.preventDefault();
+    this.electronService.ipcRenderer.send('resize', size);
+  }
 }

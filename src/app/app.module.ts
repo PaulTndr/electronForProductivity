@@ -1,3 +1,7 @@
+import { MenuComponent } from './menu/menu.component';
+import { StatisticsComponent } from './tabs/statistics/statistics.component';
+import { ReportingComponent } from './tabs/reporting/reporting.component';
+import { FeedComponent } from './tabs/feed/feed.component';
 import 'reflect-metadata';
 import '../polyfills';
 
@@ -14,8 +18,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 
-import { HomeModule } from './home/home.module';
-
 import { AppComponent } from './app.component';
 
 // AoT requires an exported function for factories
@@ -24,14 +26,13 @@ export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
 }
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, FeedComponent, ReportingComponent, StatisticsComponent, MenuComponent],
   imports: [
     BrowserModule,
     FormsModule,
     HttpClientModule,
     CoreModule,
     SharedModule,
-    HomeModule,
     AppRoutingModule,
     TranslateModule.forRoot({
       loader: {
@@ -44,4 +45,4 @@ export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule {}
+export class AppModule { }
